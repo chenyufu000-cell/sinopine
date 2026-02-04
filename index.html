@@ -3,68 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>华松国际 Sinopine | 工业级无人机与柴油发电机</title>
-  <meta name="description" content="华松国际（Sinopine）专注于工业级无人机与柴油发电机的国际贸易与项目供货。" />
+  <title>华松国际 Sinopine International | 工业级无人机与柴油发电机</title>
+  <meta name="description" content="华松国际（Sinopine International）专注于工业级无人机与柴油发电机的国际贸易与项目供货。" />
   <style>
-    body{
-      margin:0;
-      font-family: Arial, "Microsoft YaHei", sans-serif;
-      background:#0b1220;
-      color:#fff;
-    }
-    header, section, footer{padding:40px 20px; max-width:1100px; margin:auto;}
-    header{display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
-    nav a{margin:0 10px; color:#9fb0d0; text-decoration:none;}
-    h1{font-size:38px;}
-    h2{margin-top:0;}
-    .btn{padding:10px 16px; border-radius:8px; background:#6ee7ff; color:#000; text-decoration:none; font-weight:bold; display:inline-block;}
+    body{margin:0;font-family:Arial,"Microsoft YaHei",sans-serif;background:#0b1220;color:#fff}
+    header,section,footer{padding:40px 20px;max-width:1100px;margin:auto}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    nav a{margin:0 10px;color:#9fb0d0;text-decoration:none}
+    h1{font-size:38px;margin:0 0 10px}
+    h2{margin:0 0 12px}
+    p{line-height:1.7;margin:10px 0}
+    .btn{padding:10px 16px;border-radius:8px;background:#6ee7ff;color:#000;text-decoration:none;font-weight:bold;display:inline-block}
     .btn:hover{filter:brightness(1.02)}
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
-    .card{background:#141d33; padding:20px; border-radius:12px;}
-    table{width:100%; border-collapse:collapse; margin-top:20px;}
-    th,td{border-bottom:1px solid #333; padding:10px;}
-    footer{border-top:1px solid #333; text-align:center; color:#9fb0d0;}
-    input,textarea{width:100%; padding:10px; border-radius:6px; border:none; margin-top:6px;}
+    .btn-wa{background:#25d366;color:#000}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .card{background:#141d33;padding:20px;border-radius:12px}
+    footer{border-top:1px solid #333;text-align:center;color:#9fb0d0}
+
+    /* header brand + logo slot */
+    .brand{display:flex;flex-direction:column;gap:10px;min-width:260px}
+    .brand-title{font-size:22px;font-weight:bold;line-height:1.15}
+    .brand-sub{color:#9fb0d0;font-size:13px;font-weight:600;margin-top:4px}
+    .logo-slot{
+      width:140px;height:44px;border-radius:10px;background:#141d33;
+      border:1px dashed #2b3558;display:flex;align-items:center;justify-content:center;
+      color:#9fb0d0;font-size:12px;user-select:none
+    }
+    .logo-slot img{max-width:100%;max-height:100%;object-fit:contain;display:block}
 
     /* language + whatsapp */
-    .top-right{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
-    .lang-toggle{display:inline-flex; border:1px solid #333; border-radius:10px; overflow:hidden}
-    .lang-toggle button{
-      border:0; padding:8px 10px; cursor:pointer; font-weight:bold;
-      background:#141d33; color:#9fb0d0;
-    }
-    .lang-toggle button.active{background:#6ee7ff; color:#000;}
-    .btn-wa{background:#25d366; color:#000;}
+    .top-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .lang-toggle{display:inline-flex;border:1px solid #333;border-radius:10px;overflow:hidden}
+    .lang-toggle button{border:0;padding:8px 10px;cursor:pointer;font-weight:bold;background:#141d33;color:#9fb0d0}
+    .lang-toggle button.active{background:#6ee7ff;color:#000}
 
-    /* IMPORTANT: 不要默认隐藏 data-lang（避免 JS 没跑导致空白） */
-    /* 我们用 JS 来切换显示；如果 JS 失败，中英都会显示，但不会空白 */
+    /* IMPORTANT: 不默认隐藏 data-lang，避免 JS 异常空白 */
 
-    /* product images */
-    .img-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; margin-top:18px;}
-    .img-card{background:#141d33; padding:14px; border-radius:12px; overflow:hidden;}
-    .img-card img{width:100%; height:auto; display:block; border-radius:10px; background:#0b1220;}
-    .img-cap{margin-top:10px; color:#fff; font-weight:bold;}
-    .img-sub{margin-top:6px; color:#9fb0d0; font-size:13px; line-height:1.5}
-    .hint{color:#9fb0d0; font-size:12px; margin-top:8px}
+    /* accordion (details/summary) */
+    details{background:#141d33;border-radius:12px;padding:14px 16px}
+    details + details{margin-top:14px}
+    summary{cursor:pointer;list-style:none;font-weight:bold}
+    summary::-webkit-details-marker{display:none}
+    .summary-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .tag{font-size:12px;color:#9fb0d0;font-weight:600}
+    .muted{color:#9fb0d0}
+
+    /* model card inside accordion */
+    .model{background:#0f1930;border:1px solid #223053;border-radius:12px;padding:14px;margin-top:12px}
+    .model h4{margin:0 0 8px}
 
     /* floating whatsapp */
-    .wa-float{
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 999;
-    }
-    .wa-float a{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:999px;
-      background:#25d366; color:#000; text-decoration:none; font-weight:bold;
-    }
+    .wa-float{position:fixed;right:16px;bottom:16px;z-index:999}
+    .wa-float a{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:#25d366;color:#000;text-decoration:none;font-weight:bold}
   </style>
 </head>
 <body>
 
 <header>
-  <h2>华松国际 Sinopine</h2>
+  <div class="brand">
+    <div class="brand-title">
+      <span data-lang="zh">华松国际</span>
+      <span data-lang="en">Sinopine International</span>
+      <div class="brand-sub">
+        <span data-lang="zh">Industrial Drones & Diesel Generators</span>
+        <span data-lang="en">Industrial Drones & Diesel Generators</span>
+      </div>
+    </div>
+
+    <!-- 上传 images/logo.png 后，取消注释 img，并删除下面两行占位文字即可 -->
+    <div class="logo-slot">
+      <!-- <img src="images/logo.png" alt="Sinopine Logo"> -->
+      <span data-lang="zh">LOGO 位置</span>
+      <span data-lang="en">LOGO Slot</span>
+    </div>
+  </div>
 
   <div class="top-right">
     <nav>
@@ -83,92 +95,122 @@
   </div>
 </header>
 
-<section>
+<!-- 首页：只展示公司与业务介绍 -->
+<section id="about">
   <h1>
-    <span data-lang="zh">工业级无人机与柴油发电机专业供应商</span>
-    <span data-lang="en">Professional Supplier of Industrial Drones & Diesel Generators</span>
+    <span data-lang="zh">华松国际｜工业级设备国际供货</span>
+    <span data-lang="en">Sinopine International | Global Supply for Industrial Equipment</span>
   </h1>
 
-  <p data-lang="zh">华松国际（Sinopine）专注于工业级无人机和柴油发电机的国际贸易与项目供货，服务于测绘、电力、安防、工程建设及应急能源等领域。</p>
-  <p data-lang="en">Sinopine focuses on global trade and project supply of industrial drones and diesel generators, serving surveying, power, security, construction, and emergency energy use cases.</p>
-
-  <a class="btn" href="#contact"><span data-lang="zh">获取报价</span><span data-lang="en">Get Quote</span></a>
-</section>
-
-<section id="about">
-  <h2><span data-lang="zh">公司介绍</span><span data-lang="en">About Us</span></h2>
-
   <p data-lang="zh">
-    华松国际（Sinopine）致力于为海外客户提供稳定可靠的工业级无人机与柴油发电机设备。
-    我们以清晰报价、稳定交付和长期合作为目标，面向经销商、工程公司和项目客户提供专业服务。
+    华松国际（Sinopine International）专注于工业级无人机与柴油发电机的国际贸易与项目供货，
+    面向海外经销商、工程公司与项目客户提供稳定供货、透明报价（FOB/CIF）与可追溯交付服务。
+  </p>
+  <p data-lang="en">
+    Sinopine International specializes in global trade and project supply of industrial drones and diesel generators.
+    We support overseas distributors, contractors, and project buyers with stable supply, transparent FOB/CIF quotations,
+    and traceable delivery.
   </p>
 
-  <p data-lang="en">
-    Sinopine is committed to providing reliable industrial drones and diesel generators for overseas customers.
-    We support distributors, contractors, and project buyers with transparent pricing, stable delivery, and long-term cooperation.
-  </p>
+  <div class="grid" style="margin-top:18px;">
+    <div class="card">
+      <h3><span data-lang="zh">我们提供什么</span><span data-lang="en">What We Provide</span></h3>
+      <p class="muted" data-lang="zh">产品资料包、报价单、交付计划、装箱清单与基础验货选项。</p>
+      <p class="muted" data-lang="en">Product pack, quotation sheet, delivery plan, packing list, and basic inspection options.</p>
+    </div>
+    <div class="card">
+      <h3><span data-lang="zh">服务对象</span><span data-lang="en">Who We Serve</span></h3>
+      <p class="muted" data-lang="zh">经销商、工程公司、测绘/巡检服务商、政府与企业项目客户。</p>
+      <p class="muted" data-lang="en">Distributors, contractors, survey/inspection providers, and enterprise/government project buyers.</p>
+    </div>
+    <div class="card">
+      <h3><span data-lang="zh">交付方式</span><span data-lang="en">Delivery Terms</span></h3>
+      <p class="muted" data-lang="zh">支持 FOB / CIF；可按目的港与项目周期安排交付。</p>
+      <p class="muted" data-lang="en">FOB/CIF supported; delivery can be scheduled by destination port and project timeline.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;">
+    <a class="btn" href="#products"><span data-lang="zh">查看产品</span><span data-lang="en">View Products</span></a>
+    <a class="btn btn-wa" id="waHero" href="#" target="_blank" rel="noopener" style="margin-left:10px;">
+      <span data-lang="zh">WhatsApp 咨询</span><span data-lang="en">WhatsApp</span>
+    </a>
+  </div>
 </section>
 
+<!-- 产品：折叠分类 → 折叠型号 -->
 <section id="products">
-  <h2><span data-lang="zh">产品类别</span><span data-lang="en">Product Categories</span></h2>
+  <h2><span data-lang="zh">产品</span><span data-lang="en">Products</span></h2>
+  <p class="muted" data-lang="zh">点击展开查看分类与型号。</p>
+  <p class="muted" data-lang="en">Click to expand categories and models.</p>
 
-  <!-- 产品图片区 -->
-  <div class="img-grid">
-    <div class="img-card">
-      <img src="images/drone.jpg" alt="Industrial Drone">
-      <div class="img-cap"><span data-lang="zh">工业级无人机</span><span data-lang="en">Industrial Drones</span></div>
-      <div class="img-sub">
-        <span data-lang="zh">热成像 / 变焦 / 航线任务，适用于巡检、测绘与应急。</span>
-        <span data-lang="en">Thermal / zoom / mission planning for inspection, mapping, and emergency response.</span>
+  <!-- 工业级无人机 -->
+  <details open>
+    <summary>
+      <div class="summary-row">
+        <span><span data-lang="zh">工业级无人机</span><span data-lang="en">Industrial Drones</span></span>
+        <span class="tag"><span data-lang="zh">展开型号</span><span data-lang="en">Expand models</span></span>
       </div>
-    </div>
+    </summary>
 
-    <div class="img-card">
-      <img src="images/generator.jpg" alt="Diesel Generator">
-      <div class="img-cap"><span data-lang="zh">柴油发电机</span><span data-lang="en">Diesel Generators</span></div>
-      <div class="img-sub">
-        <span data-lang="zh">开放式 / 静音箱，适用于工地、工厂、医院与备用电源。</span>
-        <span data-lang="en">Open / silent canopy types for sites, factories, hospitals, and backup power.</span>
+    <details class="model">
+      <summary><div class="summary-row"><span>DJI Matrice 4E</span><span class="tag">Mapping</span></div></summary>
+      <p class="muted" data-lang="zh">适用于测绘、工程建设与资产管理，侧重高精度与任务效率。</p>
+      <p class="muted" data-lang="en">For surveying, construction, and asset management, focusing on accuracy and mission efficiency.</p>
+    </details>
+
+    <details class="model">
+      <summary><div class="summary-row"><span>DJI Matrice 4T</span><span class="tag">Thermal</span></div></summary>
+      <p class="muted" data-lang="zh">适用于安防巡逻、电力巡检与应急响应，支持热成像与变焦识别。</p>
+      <p class="muted" data-lang="en">For security patrol, power inspection, and emergency response with thermal imaging and zoom.</p>
+    </details>
+
+    <details class="model">
+      <summary><div class="summary-row"><span>DJI Matrice 4D</span><span class="tag">Dock</span></div></summary>
+      <p class="muted" data-lang="zh">适用于自动化值守与远程巡检场景，可配合机库实现无人值守作业。</p>
+      <p class="muted" data-lang="en">Designed for automated missions and remote inspection with docking systems.</p>
+    </details>
+
+    <details class="model">
+      <summary><div class="summary-row"><span>DJI Matrice 4TD</span><span class="tag">Dock + Thermal</span></div></summary>
+      <p class="muted" data-lang="zh">结合自动化飞行与热成像能力，适用于能源巡检、安防与应急响应。</p>
+      <p class="muted" data-lang="en">Combines automated operation with thermal imaging for inspection, security, and emergency response.</p>
+    </details>
+  </details>
+
+  <!-- 柴油发电机 -->
+  <details>
+    <summary>
+      <div class="summary-row">
+        <span><span data-lang="zh">柴油发电机</span><span data-lang="en">Diesel Generators</span></span>
+        <span class="tag"><span data-lang="zh">展开功率</span><span data-lang="en">Expand power</span></span>
       </div>
-    </div>
-  </div>
+    </summary>
 
-  <p class="hint">
-    <span data-lang="zh">图片提示：请在仓库创建 images/ 文件夹并上传 drone.jpg 与 generator.jpg（大小写要一致）。</span>
-    <span data-lang="en">Image tip: create images/ and upload drone.jpg + generator.jpg (case-sensitive).</span>
-  </p>
+    <details class="model">
+      <summary><div class="summary-row"><span><span data-lang="zh">50kW</span><span data-lang="en">50kW</span></span><span class="tag">Small</span></div></summary>
+      <p class="muted" data-lang="zh">适用于小型工地、商用备用电源及通信基站。</p>
+      <p class="muted" data-lang="en">For small construction sites, commercial backup power, and telecom base stations.</p>
+    </details>
 
-  <!-- 你第一版原内容保留 -->
-  <div class="grid" style="margin-top:20px;">
-    <div class="card">
-      <h3><span data-lang="zh">工业级无人机</span><span data-lang="en">Industrial Drones</span></h3>
-      <p data-lang="zh">适用于测绘、电力巡检、安防巡逻和应急响应，支持热成像、变焦识别及自动航线任务。</p>
-      <p data-lang="en">For surveying, power inspection, security patrol, and emergency response—supporting thermal imaging, zoom identification, and automated mission flights.</p>
-    </div>
-    <div class="card">
-      <h3><span data-lang="zh">柴油发电机</span><span data-lang="en">Diesel Generators</span></h3>
-      <p data-lang="zh">覆盖开放式与静音型柴油发电机，适用于工地、工厂、医院及备用电源场景。</p>
-      <p data-lang="en">Covering open and silent diesel generator sets for construction sites, factories, hospitals, and backup power scenarios.</p>
-    </div>
-  </div>
+    <details class="model">
+      <summary><div class="summary-row"><span><span data-lang="zh">100kW</span><span data-lang="en">100kW</span></span><span class="tag">Medium</span></div></summary>
+      <p class="muted" data-lang="zh">适用于工厂、医院及中型工程项目备用或常用供电。</p>
+      <p class="muted" data-lang="en">For factories, hospitals, and mid-size construction projects.</p>
+    </details>
 
-  <table>
-    <tr>
-      <th><span data-lang="zh">产品类别</span><span data-lang="en">Category</span></th>
-      <th><span data-lang="zh">主要用途</span><span data-lang="en">Main Use</span></th>
-      <th><span data-lang="zh">典型客户</span><span data-lang="en">Typical Buyers</span></th>
-    </tr>
-    <tr>
-      <td><span data-lang="zh">工业级无人机</span><span data-lang="en">Industrial Drones</span></td>
-      <td><span data-lang="zh">巡检、测绘、安防、应急</span><span data-lang="en">Inspection, Mapping, Security, Emergency</span></td>
-      <td><span data-lang="zh">测绘公司、电力公司、政府项目</span><span data-lang="en">Survey firms, Power companies, Government projects</span></td>
-    </tr>
-    <tr>
-      <td><span data-lang="zh">柴油发电机</span><span data-lang="en">Diesel Generators</span></td>
-      <td><span data-lang="zh">备用电源、工地供电、应急供电</span><span data-lang="en">Backup power, Site power, Emergency power</span></td>
-      <td><span data-lang="zh">工程公司、工厂、医院、矿区</span><span data-lang="en">Contractors, Factories, Hospitals, Mines</span></td>
-    </tr>
-  </table>
+    <details class="model">
+      <summary><div class="summary-row"><span><span data-lang="zh">150kW</span><span data-lang="en">150kW</span></span><span class="tag">Large</span></div></summary>
+      <p class="muted" data-lang="zh">适用于矿区、工程营地与大型临时用电场景。</p>
+      <p class="muted" data-lang="en">For mining sites, project camps, and large temporary power needs.</p>
+    </details>
+
+    <details class="model">
+      <summary><div class="summary-row"><span><span data-lang="zh">200kW</span><span data-lang="en">200kW</span></span><span class="tag">Heavy Duty</span></div></summary>
+      <p class="muted" data-lang="zh">适用于大型工程项目、工业园区及长期连续供电需求。</p>
+      <p class="muted" data-lang="en">For large projects, industrial zones, and long-term continuous power supply.</p>
+    </details>
+  </details>
 </section>
 
 <section id="advantages">
@@ -176,47 +218,37 @@
   <div class="grid">
     <div class="card">
       <h3><span data-lang="zh">稳定供货</span><span data-lang="en">Stable Supply</span></h3>
-      <p data-lang="zh">支持批量供货与项目型订单，交付周期明确。</p>
-      <p data-lang="en">Support bulk supply and project orders with clear lead times.</p>
+      <p class="muted" data-lang="zh">支持批量供货与项目型订单，交付周期明确。</p>
+      <p class="muted" data-lang="en">Bulk supply and project orders with clear lead times.</p>
     </div>
     <div class="card">
       <h3><span data-lang="zh">透明报价</span><span data-lang="en">Transparent Pricing</span></h3>
-      <p data-lang="zh">支持 FOB / CIF 报价方式，价格结构清晰。</p>
-      <p data-lang="en">FOB/CIF pricing available with a clear cost structure.</p>
+      <p class="muted" data-lang="zh">支持 FOB / CIF 报价方式，价格结构清晰。</p>
+      <p class="muted" data-lang="en">FOB/CIF available with clear cost structure.</p>
     </div>
     <div class="card">
-      <h3><span data-lang="zh">行业应用导向</span><span data-lang="en">Use-Case Driven</span></h3>
-      <p data-lang="zh">以实际行业场景为导向，为客户匹配合适设备。</p>
-      <p data-lang="en">We recommend the right equipment based on real industry use cases.</p>
+      <h3><span data-lang="zh">应用导向</span><span data-lang="en">Use-Case Driven</span></h3>
+      <p class="muted" data-lang="zh">按行业场景与目的国需求匹配型号与配置。</p>
+      <p class="muted" data-lang="en">Match models/configurations to industries and destination requirements.</p>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <h2><span data-lang="zh">联系我们</span><span data-lang="en">Contact Us</span></h2>
-  <p data-lang="zh">欢迎经销商及项目客户与我们联系获取产品资料与报价。</p>
-  <p data-lang="en">Distributors and project buyers are welcome to contact us for product details and quotations.</p>
+  <p data-lang="zh">欢迎经销商及项目客户联系获取产品资料与报价。</p>
+  <p data-lang="en">Distributors and project buyers are welcome to request product packs and quotations.</p>
 
-  <form>
-    <label><span data-lang="zh">公司 / 姓名</span><span data-lang="en">Company / Name</span></label>
-    <input type="text" placeholder="Your Company / Name">
-
-    <label><span data-lang="zh">邮箱</span><span data-lang="en">Email</span></label>
-    <input type="email" placeholder="email@example.com">
-
-    <label><span data-lang="zh">需求说明</span><span data-lang="en">Request Details</span></label>
-    <textarea placeholder="例如：工业级无人机，数量2台，目的港 Karachi"></textarea>
-
-    <br><br>
-    <a class="btn" href="mailto:sales@sinopine.com"><span data-lang="zh">发送邮件询盘</span><span data-lang="en">Email Inquiry</span></a>
+  <div style="margin-top:12px;">
+    <a class="btn" href="mailto:sales@sinopine.com"><span data-lang="zh">邮件询盘</span><span data-lang="en">Email</span></a>
     <a class="btn btn-wa" id="waContact" href="#" target="_blank" rel="noopener" style="margin-left:10px;">
-      <span data-lang="zh">WhatsApp 联系</span><span data-lang="en">WhatsApp Chat</span>
+      <span data-lang="zh">WhatsApp 联系</span><span data-lang="en">WhatsApp</span>
     </a>
-  </form>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 华松国际 Sinopine | Industrial Drones & Diesel Generators</p>
+  <p>© 2026 华松国际 Sinopine International | Industrial Drones & Diesel Generators</p>
 </footer>
 
 <div class="wa-float">
@@ -224,27 +256,26 @@
 </div>
 
 <script>
-  // 你的 WhatsApp 号码（国际格式，不要加 +，不要空格）
+  // WhatsApp 号码（国际格式，不要加 +，不要空格）
   const waNumber = "971500000000";
-  const msgZh = encodeURIComponent("你好，我想咨询华松国际（Sinopine）的工业级无人机/柴油发电机报价。");
-  const msgEn = encodeURIComponent("Hi, I'd like a quotation for industrial drones / diesel generators from Sinopine.");
+  const msgZh = encodeURIComponent("你好，我想咨询华松国际（Sinopine International）的产品资料与报价。");
+  const msgEn = encodeURIComponent("Hi, I'd like product details and a quotation from Sinopine International.");
 
   function applyLang(lang){
     const zh = document.querySelectorAll('[data-lang="zh"]');
     const en = document.querySelectorAll('[data-lang="en"]');
 
-    // JS 正常：只显示一种语言
     zh.forEach(el => el.style.display = (lang === "zh" ? "" : "none"));
     en.forEach(el => el.style.display = (lang === "en" ? "" : "none"));
 
-    // 按钮状态
     document.getElementById("btnZh").classList.toggle("active", lang === "zh");
     document.getElementById("btnEn").classList.toggle("active", lang === "en");
 
-    // WhatsApp 链接
     const msg = (lang === "zh") ? msgZh : msgEn;
     const url = "https://wa.me/" + waNumber + "?text=" + msg;
+
     document.getElementById("waTop").href = url;
+    document.getElementById("waHero").href = url;
     document.getElementById("waContact").href = url;
     document.getElementById("waFloat").href = url;
 
