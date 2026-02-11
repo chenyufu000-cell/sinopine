@@ -283,6 +283,28 @@
       bottom:16px;
       z-index:999;
     }
+    /* ===== Video block ===== */
+.video-block{
+  margin:12px 0;
+}
+.video-title{
+  font-weight:900;
+  margin-bottom:6px;
+}
+.video-wrap{
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+}
+.video-wrap iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:12px;
+}
   </style>
 </head>
 
@@ -407,6 +429,20 @@
         <img src="m400-1.jpg" alt="Matrice 400 image 1">
         <img src="m400-2.jpg" alt="Matrice 400 image 2">
       </div>
+      <div class="video-block">
+  <div class="video-title">
+    <span data-lang="en">Official Video</span>
+    <span data-lang="zh">官方宣传视频</span>
+  </div>
+  <div class="video-wrap">
+    <iframe 
+      src="https://www.youtube.com/embed/3UrKq7xj7TI"
+      title="DJI Matrice 400"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
       <div class="product-body">
         <div data-lang="en">Built for heavy-duty industrial missions in complex environments, suitable for inspection, emergency response, construction and security operations.</div>
         <div data-lang="zh">面向重载行业任务与复杂环境作业，适用于巡检、应急响应、工程与安防等场景。</div>
